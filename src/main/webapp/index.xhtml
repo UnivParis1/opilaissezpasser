@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+
+        <h:head>
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>OPI Laissez-passer</title>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="90">
+                    <h:outputText value="OPI Laissez-passer ajout des laissez-passer pour des OPI existantes" escape="false" style="white-space: pre-wrap;word-wrap: break-word; " />
+                </p:layoutUnit>
+
+                <p:separator />
+
+                <p:layoutUnit position="center" size="90">
+
+                    <h:form enctype="multipart/form-data">
+                        <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
+                            <h:outputText value="Séléctionner le fichier laissez-passer OPI au format csv" />
+                        </h:panelGrid>
+
+                        <p:spacer />
+
+                        <p:growl id="messages" showDetail="true" />
+
+                        <p:fileUpload value="#{indexController.file}" mode="simple" />
+
+                        <p:commandButton value="Importer" ajax="false" action="#{indexController.upload}" />
+
+                    </h:form>
+
+                </p:layoutUnit>
+
+            </p:layout>
+        </h:body>
+
+    </f:view>
+
+</html>

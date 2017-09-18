@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Import Resultat OPI Laissez-passer</title>
+            </f:facet>
+
+            <h:outputStylesheet>
+                .opiErrorResult {
+                background: red;
+                }
+                .opiWarningResult {
+                background: orange;
+                }
+                .opiSuccessResult {
+                background: #00e600;
+                }
+            </h:outputStylesheet>
+
+        </h:head>
+
+
+        <h:head>
+            <title>OPI Laissez-passer Rapport insertion</title>
+        </h:head>
+
+        <h:body>
+
+            <h3>
+                <p:link outcome="index" value="Retour à l'import" />
+            </h3>
+
+            <p:separator />
+
+            <p:messages id="messages" showDetail="true" closable="true"  />
+
+            <p:panel id="basic" header="Rapport de l'import fichier" style="margin-bottom:3px">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <h:outputText value="Rapport d'insertion laissez-passer OPI Laissez-passer" escape="false" style="white-space: pre-wrap;word-wrap: break-word; " />
+                </h:panelGrid>
+            </p:panel>
+
+            <p:separator />
+
+            <p:dataTable var="result" value="#{indexController.results}" rowStyleClass="#{result.class_css}"  >
+
+                <p:column headerText="Numéro OPI">
+                    <h:outputText value="#{result.numOPI}" escape="false" style="white-space: pre-wrap;word-wrap: break-word; " />
+                </p:column>
+
+                <p:column headerText="Statut de l'import">
+                    <h:outputText value="#{result.message}" escape="false" style="white-space: pre-wrap;word-wrap: break-word; " />
+                </p:column>
+
+            </p:dataTable>
+
+        </h:body>
+
+    </f:view>
+</html>
