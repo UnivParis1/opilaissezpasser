@@ -87,7 +87,7 @@
             <artifactId>apo-webservicesclient</artifactId>
             <version>4.9.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/apo-webservicesclient49000.jar</systemPath>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/apo-webservicesclient520lba.jar</systemPath>
         </dependency>
     </dependencies>
 
